@@ -1,10 +1,7 @@
-
-
-import random
-
+import question 
 
 def game (): 
-    print('Welcome to Shark Chase!')
+    print('---Welcome to Shark Chase!---')
+    print('In order to make it back to land, answer the following questions correctly.')
+game () 
 
-def ask_a_question(player): 
-    random.randint(0, len(questions)- 1)
