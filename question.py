@@ -1,27 +1,33 @@
 import random 
 
-questions = [
-    {"question": "What is the smallest ocean?", "answer": "Arctic"},
-    {"question": "What ocean are sharks mostly found in?", "answer": "Atlantic"},
-    {"question": "What is the most famous marine plant?", "answer": "Seaweed"},
-    {"question": "Do sharks have more fins or teeth?", "answer": "Teeth"},
-    {"question": "What is the deepest part of the ocean called?", "answer": "Challenger Deep"},
-    {"question": "Do sharks have bones?", "answer": "No"}, 
-    {"question": "Do sharks only eat meat?", "answer": "No"}  
-]
+class Questionnaire:
+    def __init__(self):
+        self.questions = [
+            "What is the smallest ocean?",
+            "What ocean are sharks mostly found in?",
+            "What is the most famous marine plant?",
+            "Do sharks have more fins or teeth?",
+            "What is the deepest part of the ocean called?",
+            "Do sharks have bones?",
+            "Do sharks only eat meat?"
+        ]
+        self.answers = [
+            "Arctic",
+            "Atlantic",
+            "Seaweed",
+            "Teeth",
+            "Challenger Deep",
+            "No",
+            "No"
+        ]
 
-def ask_question(): 
-    index = random.randint(0, len(questions) - 1) 
-    question = questions[index]
-    print(question["question"])
-    answer = input("Your answer: ") 
+    def ask_question(self) -> bool: 
+        index = random.randint(0, len(self.questions) - 1) 
+        question = self.questions[index]
+        print(question)
 
-    if answer == question["answer"]:
-        return True
-    else:
-        return False
-    
-if ask_question():
-    print("Correct!")
-else:
-    print("Incorrect!") 
+        answer = input("Your answer: ") 
+        if answer.casefold() == self.answers[index]:
+            return True
+        else:
+            return False
