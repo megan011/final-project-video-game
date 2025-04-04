@@ -1,4 +1,4 @@
-class Player:
+class Player: 
     def __init__(self): 
         self.speed = 0 
         self.score = 0 

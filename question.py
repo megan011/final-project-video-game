@@ -27,7 +27,16 @@ class Questionnaire:
         print(question)
 
         answer = input("Your answer: ") 
-        if answer.casefold() == self.answers[index]:
+        if answer.casefold() == self.answers[index].casefold():
+            return True
+        else:
+            return False
+        
+    def ask_specific_question_with_answer(self, index: int, answer: str) -> bool:
+        question = self.questions[index]
+        print(question)
+
+        if answer.casefold() == self.answers[index].casefold():
             return True
         else:
             return False
