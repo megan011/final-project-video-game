@@ -21,6 +21,7 @@ class Questionnaire:
             "No"
         ]
 
+
     def ask_question(self) -> bool: 
         index = random.randint(0, len(self.questions) - 1) 
         question = self.questions[index]
@@ -40,3 +41,13 @@ class Questionnaire:
             return True
         else:
             return False
+        
+    def add_question(self, q: str, a: str) -> bool:
+        for question in self.questions:
+            if question.casefold() == q.casefold():
+                return False
+            
+        self.questions.append(q)
+        self.answers.append(a)
+
+        return True

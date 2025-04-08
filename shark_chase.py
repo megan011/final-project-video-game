@@ -21,6 +21,19 @@ if __name__ == '__main__':
     else:
         print_dramatic_text('Incorrect ... you\'ve been eaten by the shark!')
 
+    response = input('Would you like to add a custom question? (y/n)')
+    if response.casefold() == 'y':
+        q = input('Please enter your question:')
+        a = input('Please enter your answer:')
+
+        result = questionnaire.add_question(q, a)
+        if result:
+            print('Your question has been successfully added!')
+        else:
+            print('Your question already exists!')
+
+    num_correct = 0
+
     while num_correct < 3:
         correct = questionnaire.ask_question()
         if correct: 
