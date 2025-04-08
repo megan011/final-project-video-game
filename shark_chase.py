@@ -21,10 +21,10 @@ if __name__ == '__main__':
     else:
         print_dramatic_text('Incorrect ... you\'ve been eaten by the shark!')
 
-    response = input('Would you like to add a custom question? (y/n)')
+    response = input('Would you like to add a custom question? (y/n) ')
     if response.casefold() == 'y':
-        q = input('Please enter your question:')
-        a = input('Please enter your answer:')
+        q = input('Please enter your question: ')
+        a = input('Please enter your answer: ')
 
         result = questionnaire.add_question(q, a)
         if result:
